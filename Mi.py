@@ -85,9 +85,6 @@ class MiPage:
 
 if __name__ == '__main__':
     data = {'user': 'XXX', 'hash': 'XXX', 'cc': '+86', }
-    # test = NeteaseLoginPage('https://account.xiaomi.com/pass/serviceLoginAuth2', data)
     test = MiPage('https://d.miwifi.com/d2r/login?referer=http%3A%2F%2Fd.miwifi.com%2Fd2r%2F', data)
     r = test.login()
     print(r.text)
-    # with open('mi2.html', 'w', encoding='utf8') as f:
-    #     f.write(r.text)
