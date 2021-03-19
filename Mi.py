@@ -1,7 +1,7 @@
 import requests
+import hashlib
 from urllib import parse
 from urllib.parse import urlparse
-
 from requests import HTTPError
 
 
@@ -84,7 +84,8 @@ class MiPage:
 
 
 if __name__ == '__main__':
-    data = {'user': 'XXX', 'hash': 'XXX', 'cc': '+86', }
+    hash_pass = hashlib.md5('XXX'.encode('utf8')).hexdigest()
+    data = {'user': 'XXX', 'hash': hash_pass, 'cc': '+86', }
     test = MiPage('https://d.miwifi.com/d2r/login?referer=http%3A%2F%2Fd.miwifi.com%2Fd2r%2F', data)
     r = test.login()
     print(r.text)
